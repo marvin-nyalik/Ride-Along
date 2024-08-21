@@ -1,6 +1,3 @@
-# Aora
-A minimalist social media mobile app with react native. Join in, share moments, videos etc. with your buddies
-
 # Welcome to your Expo app 👋
 
 This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
