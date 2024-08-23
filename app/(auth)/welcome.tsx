@@ -9,6 +9,8 @@ import CustomButton from "@/components/CustomButton";
 const Onboarding = () => {
   const swiperRef = useRef<Swiper>(null);
   const [activeIndex, setActiveIndex] = useState(0);
+  const isLastSlide = activeIndex === onboarding.length - 1;
+
   return (
     <SafeAreaView className="flex h-full justify-between items-center bg-white">
       <TouchableOpacity
@@ -32,7 +34,7 @@ const Onboarding = () => {
         onIndexChanged={(index) => setActiveIndex(index)}
       >
         {onboarding.map((item) => (
-          <View className="flex items-center justify-center p-5">
+          <View key={item.id} className="flex items-center justify-center p-5">
             <Image
               source={item.image}
               resizeMode="contain"
@@ -49,7 +51,15 @@ const Onboarding = () => {
           </View>
         ))}
       </Swiper>
-      <CustomButton title="Next" className={'w'}/>
+      <CustomButton
+        title={isLastSlide ? "Get Started" : "Next"}
+        className="w-11/12 mt-10"
+        onPress={() => {
+          isLastSlide
+            ? router.replace("/(auth)/signup")
+            : swiperRef.current?.scrollBy(1);
+        }}
+      />
     </SafeAreaView>
   );
 };
