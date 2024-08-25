@@ -40,7 +40,7 @@ const customTokenCache = {
       return token;
     } catch (e) {
       console.error("Failed to retrieve token:", e);
-      return null; // Returning null as a fallback
+      return null;
     }
   },
   saveToken: async (key: string, token: string) => {
