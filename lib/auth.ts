@@ -1,4 +1,5 @@
 import * as SecureStore from "expo-secure-store";
+import AsyncStorage from "@react-native-async-storage/async-storage";
 
 export interface TokenCache {
   getToken: (key: string) => Promise<string | undefined | null>;
@@ -30,3 +31,32 @@ export const tokenCache = {
     }
   },
 };
+
+// Implementing a custom TokenCache interface
+const customTokenCache = {
+  getToken: async (key: string) => {
+    try {
+      const token = await AsyncStorage.getItem(key);
+      return token;
+    } catch (e) {
+      console.error("Failed to retrieve token:", e);
+      return null; // Returning null as a fallback
+    }
+  },
+  saveToken: async (key: string, token: string) => {
+    try {
+      await AsyncStorage.setItem(key, token);
+    } catch (e) {
+      console.error("Failed to save token:", e);
+    }
+  },
+  clearToken: async (key: string) => {
+    try {
+      await AsyncStorage.removeItem(key);
+    } catch (e) {
+      console.error("Failed to remove token:", e);
+    }
+  },
+};
+
+export default customTokenCache;
