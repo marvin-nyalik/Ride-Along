@@ -55,7 +55,7 @@ const signup = () => {
       if (completeSignUp.status === "complete") {
         await setActive({ session: completeSignUp.createdSessionId });
         setVerification({ ...verification, state: "success" });
-        // router.replace('/')
+        router.replace('/')
       } else {
         setVerification({
           ...verification,
@@ -127,7 +127,7 @@ const signup = () => {
           </Link>
         </View>
 
-        {/* Verification Modal */}
+        {/* Verification Modals */}
         <ReactNativeModal
           isVisible={verification.state === "pending"}
           onModalHide={() => {
