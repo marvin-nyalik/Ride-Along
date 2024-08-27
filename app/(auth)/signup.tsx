@@ -7,6 +7,7 @@ import { Link, router } from "expo-router";
 import OAuth from "@/components/OAuth";
 import { useSignUp } from "@clerk/clerk-expo";
 import ReactNativeModal from "react-native-modal";
+import { fetchAPI } from "@/lib/fetch";
 
 const signup = () => {
   const { isLoaded, signUp, setActive } = useSignUp();
@@ -53,6 +54,7 @@ const signup = () => {
       });
 
       if (completeSignUp.status === "complete") {
+        await fetchAPI('/(api)/user')
         await setActive({ session: completeSignUp.createdSessionId });
         setVerification({ ...verification, state: "success" });
         router.replace('/')
