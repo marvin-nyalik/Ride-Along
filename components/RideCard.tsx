@@ -51,29 +51,47 @@ const RideCard = ({
 
         <View className="flex flex-col w-full bg-general-500 rounded-lg mt-5 p-3 items-start justify-center">
           <View className="flex flex-row items-center w-full justify-between mb-5">
-            <Text className="text-md font-JakartaMedium text-gray-500">Date & Time</Text>
-            <Text className="text-md font-JakartaMedium text-gray-500">{formatDate(created_at)}, {formatTime(ride_time)}</Text>
+            <Text className="text-md font-JakartaMedium text-gray-500">
+              Date & Time
+            </Text>
+            <Text className="text-md font-JakartaMedium text-gray-500">
+              {formatDate(created_at)}, {formatTime(ride_time)}
+            </Text>
           </View>
         </View>
         <View className="flex flex-col w-full bg-general-500 rounded-lg mt-5 p-3 items-start justify-center">
           <View className="flex flex-row items-center w-full justify-between mb-5">
-            <Text className="text-md font-JakartaMedium text-gray-500">Driver</Text>
-            <Text className="text-md font-JakartaMedium text-gray-500">{driver.first_name} {driver.last_name}</Text>
+            <Text className="text-md font-JakartaMedium text-gray-500">
+              Driver
+            </Text>
+            <Text className="text-md font-JakartaMedium text-gray-500">
+              {driver.first_name} {driver.last_name}
+            </Text>
           </View>
         </View>
         <View className="flex flex-col w-full bg-general-500 rounded-lg mt-5 p-3 items-start justify-center">
           <View className="flex flex-row items-center w-full justify-between mb-5">
-            <Text className="text-md font-JakartaMedium text-gray-500">Car Seats</Text>
-            <Text className="text-md font-JakartaMedium text-gray-500">{driver.car_seats}</Text>
+            <Text className="text-md font-JakartaMedium text-gray-500">
+              Car Seats
+            </Text>
+            <Text className="text-md font-JakartaMedium text-gray-500">
+              {driver.car_seats}
+            </Text>
           </View>
         </View>
         <View className="flex flex-col w-full bg-general-500 rounded-lg mt-5 p-3 items-start justify-center">
           <View className="flex flex-row items-center w-full justify-between mb-5">
-            <Text className="text-md font-JakartaMedium text-gray-500">Payment Status</Text>
-            <Text className={`text-md capitalize font-JakartaMedium ${payment_status === 'paid' ? 'text-green-500': 'text-red-500'}`}>{payment_status}</Text>
+            <Text className="text-md font-JakartaMedium text-gray-500">
+              Payment Status
+            </Text>
+            <Text
+              className={`text-md capitalize font-JakartaMedium ${payment_status === "paid" ? "text-green-500" : "text-red-500"}`}
+            >
+              {payment_status}
+            </Text>
           </View>
         </View>
-      </View> 
+      </View>
     </View>
   );
 };
