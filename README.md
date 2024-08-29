@@ -1,50 +1,72 @@
-# Welcome to your Expo app 👋
+# Ride-Along
+**Ride-Along** is a ride-hailing mobile application built using React Native and Expo. Inspired by platforms like Uber, this app enables users to select their current location and desired destination, view nearby drivers on an interactive map, and choose a driver to complete their ride. The app leverages Expo’s server capabilities to handle API routes, ensuring a smooth and responsive user experience.
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+## Features
 
-## Get started
+- **Location Selection:** Users can easily set their pick-up and drop-off points using the app’s interface.
+- **Driver Availability:** The app shows available drivers nearby on a real-time map.
+- **Driver Selection:** Users can review and select their preferred driver from the list of nearby options.
+- **User-Friendly Interface:** The app is designed to be intuitive and easy to navigate, with a focus on user experience.
 
-1. Install dependencies
+## Technologies Used
 
+- **Frontend:**
+  - **React Native**: For building the mobile application.
+  - **Expo**: To streamline development and manage the app’s lifecycle.
+  - **React Navigation**: For managing in-app navigation.
+  - **Map APIs (e.g., Google Maps)**: To display maps and handle geolocation services.
+  - **Zustand**: For efficient and simple state management.
+
+- **Backend:**
+  - **Expo Server Capabilities**: To handle API routes and backend logic within the Expo ecosystem.
+
+## Installation and Setup
+
+### Prerequisites
+
+- **Node.js**: Ensure you have Node.js installed on your machine.
+- **Expo CLI**: For running and managing the React Native application.
+- **Google Maps API Key**: Obtain an API key for using map services.
+
+### Steps to Run the Project
+
+1. **Clone the Repository:**
+   ```bash
+   git clone https://github.com/marvin-nyalik/Ride-Along.git
+   cd ride-along
+   ```
+
+2. **Install Dependencies:**
    ```bash
    npm install
    ```
 
-2. Start the app
+3. **Set Up Environment Variables:**
+   - Create a `.env` file in the root directory and add your Google Maps API key.
+   - Example `.env`:
+     ```env
+     EXPO_PUBLIC_GOOGLE_API_KEY=your_google_maps_api_key
+     ```
 
+4. **Start the Application:**
    ```bash
-    npx expo start
+   npx expo start -c --tunnel
    ```
 
-In the output, you'll find options to open the app in a
+5. **Run on a Device or Simulator:**
+   - Scan the QR code using the Expo Go app on your device, or run the app on an iOS or Android emulator.
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+## API Routes
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+- **User Location:** Handles user location data, including latitude, longitude, and address.
+- **Driver Data:** Manages the retrieval and display of nearby drivers.
+- **Ride Management:** Handles the logic for selecting a driver and managing ride details.
 
-## Get a fresh project
+## Contributing
 
-When you're ready, run:
+Contributions are welcome! Please submit a pull request or open an issue to suggest improvements or report bugs.
 
-```bash
-npm run reset-project
-```
+## License
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+This project is licensed under the MIT License.
 
-## Learn more
-
-To learn more about developing your project with Expo, look at the following resources:
-
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
-
-## Join the community
-
-Join our community of developers creating universal apps.
-
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
